@@ -1,0 +1,12 @@
+[
+  {"id":"treasury_refund","deck":"treasury","title":"Возврат налога","text":"Получите 100 000.","effects":[{"type":"credit","amount":100000}]},
+  {"id":"treasury_consulting","deck":"treasury","title":"Консалтинг","text":"Заплатите 50 000.","effects":[{"type":"debit","amount":50000}]},
+  {"id":"treasury_inheritance","deck":"treasury","title":"Наследство","text":"Получите 200 000.","effects":[{"type":"credit","amount":200000}]},
+  {"id":"treasury_insurance","deck":"treasury","title":"Страховая выплата","text":"Получите 75 000.","effects":[{"type":"credit","amount":75000}]},
+  {"id":"treasury_hospital","deck":"treasury","title":"Медицинский счёт","text":"Заплатите 60 000.","effects":[{"type":"debit","amount":60000}]},
+  {"id":"treasury_release","deck":"treasury","title":"Амнистия","text":"Сохраните карту освобождения из тюрьмы.","effects":[{"type":"get_out_of_jail"}]},
+  {"id":"treasury_jail","deck":"treasury","title":"Судебное решение","text":"Отправляйтесь в тюрьму.","effects":[{"type":"send_to_jail"}]},
+  {"id":"treasury_birthday","deck":"treasury","title":"День рождения","text":"Получите по 20 000 от каждого игрока.","effects":[{"type":"collect_each","amount":20000}]},
+  {"id":"treasury_school","deck":"treasury","title":"Образовательный фонд","text":"Заплатите каждому по 15 000.","effects":[{"type":"pay_each","amount":15000}]},
+  {"id":"treasury_start","deck":"treasury","title":"Городская премия","text":"Отправляйтесь на СТАРТ.","effects":[{"type":"move_to","index":0,"collect_start":true}]}
+]

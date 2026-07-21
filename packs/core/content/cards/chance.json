@@ -1,0 +1,12 @@
+[
+  {"id":"chance_start","deck":"chance","title":"К старту","text":"Переместитесь на СТАРТ и получите 200 000.","effects":[{"type":"move_to","index":0,"collect_start":true}]},
+  {"id":"chance_bank","deck":"chance","title":"Банковский бонус","text":"Получите дивиденды 120 000.","effects":[{"type":"credit","amount":120000}]},
+  {"id":"chance_fine","deck":"chance","title":"Штраф регулятора","text":"Заплатите 80 000.","effects":[{"type":"debit","amount":80000}]},
+  {"id":"chance_jail","deck":"chance","title":"Проверка документов","text":"Отправляйтесь в тюрьму.","effects":[{"type":"send_to_jail"}]},
+  {"id":"chance_release","deck":"chance","title":"Адвокат","text":"Сохраните карту освобождения из тюрьмы.","effects":[{"type":"get_out_of_jail"}]},
+  {"id":"chance_forward","deck":"chance","title":"Удачный маршрут","text":"Продвиньтесь на три клетки.","effects":[{"type":"move_relative","steps":3}]},
+  {"id":"chance_back","deck":"chance","title":"Перекрытие дороги","text":"Вернитесь на две клетки.","effects":[{"type":"move_relative","steps":-2}]},
+  {"id":"chance_repairs","deck":"chance","title":"Ремонт портфеля","text":"Заплатите за каждую постройку.","effects":[{"type":"repairs","per_house":25000,"per_hotel":100000}]},
+  {"id":"chance_collect","deck":"chance","title":"День инвестора","text":"Получите по 30 000 от каждого игрока.","effects":[{"type":"collect_each","amount":30000}]},
+  {"id":"chance_pay","deck":"chance","title":"Благотворительный вечер","text":"Заплатите каждому игроку по 20 000.","effects":[{"type":"pay_each","amount":20000}]}
+]

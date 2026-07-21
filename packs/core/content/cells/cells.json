@@ -1,0 +1,58 @@
+[
+  {"id":"cell_start","name":"СТАРТ","type":"corner_start","tags":["corner","special"],"color":"#2f8f61"},
+  {"id":"cell_jail","name":"ТЮРЬМА","type":"corner_jail","tags":["corner","special","jail"],"color":"#b47a32"},
+  {"id":"cell_free_parking","name":"ПАРКИНГ","type":"corner_free_parking","tags":["corner","special"],"color":"#315f79"},
+  {"id":"cell_go_to_jail","name":"В ТЮРЬМУ","type":"corner_go_to_jail","tags":["corner","special","jail"],"color":"#8e302d"},
+  {"id":"cell_tax","name":"НАЛОГ","type":"tax","tags":["special","tax"],"color":"#8b8066","amount":100000},
+  {"id":"cell_chance","name":"ШАНС","type":"chance","tags":["special","card"],"color":"#b06a37"},
+  {"id":"cell_treasury","name":"КАЗНА","type":"treasury","tags":["special","card"],"color":"#537c75"},
+
+  {"id":"rail_north","name":"Северный вокзал","type":"railroad","tags":["property","transport"],"color":"#3c3934","price":200000,"mortgage":100000,"rent_table":[25000,50000,100000,200000,300000,400000]},
+  {"id":"rail_east","name":"Восточный вокзал","type":"railroad","tags":["property","transport"],"color":"#3c3934","price":200000,"mortgage":100000,"rent_table":[25000,50000,100000,200000,300000,400000]},
+  {"id":"rail_central","name":"Центральный вокзал","type":"railroad","tags":["property","transport"],"color":"#3c3934","price":200000,"mortgage":100000,"rent_table":[25000,50000,100000,200000,300000,400000]},
+  {"id":"rail_south","name":"Южный вокзал","type":"railroad","tags":["property","transport"],"color":"#3c3934","price":200000,"mortgage":100000,"rent_table":[25000,50000,100000,200000,300000,400000]},
+  {"id":"rail_west","name":"Западный вокзал","type":"railroad","tags":["property","transport"],"color":"#3c3934","price":200000,"mortgage":100000,"rent_table":[25000,50000,100000,200000,300000,400000]},
+  {"id":"rail_port","name":"Речной терминал","type":"railroad","tags":["property","transport"],"color":"#3c3934","price":200000,"mortgage":100000,"rent_table":[25000,50000,100000,200000,300000,400000]},
+  {"id":"utility_power","name":"Энергосеть","type":"utility","tags":["property","utility"],"color":"#c6a849","price":150000,"mortgage":75000,"multiplier_one":15000,"multiplier_two":35000},
+  {"id":"utility_water","name":"Водоканал","type":"utility","tags":["property","utility"],"color":"#4d8295","price":150000,"mortgage":75000,"multiplier_one":15000,"multiplier_two":35000},
+
+  {"id":"brown_1","name":"Старый двор","type":"property","tags":["property"],"group":"brown","color":"#70402b","price":60000,"mortgage":30000,"house_cost":50000,"rent_table":[8000,40000,120000,360000,640000,900000],"rent_growth":1.1},
+  {"id":"brown_2","name":"Ремесленная","type":"property","tags":["property"],"group":"brown","color":"#70402b","price":60000,"mortgage":30000,"house_cost":50000,"rent_table":[10000,50000,150000,450000,650000,950000],"rent_growth":1.1},
+  {"id":"brown_3","name":"Кирпичный переулок","type":"property","tags":["property"],"group":"brown","color":"#70402b","price":80000,"mortgage":40000,"house_cost":50000,"rent_table":[12000,60000,180000,500000,700000,1000000],"rent_growth":1.1},
+  {"id":"brown_4","name":"Медная улица","type":"property","tags":["property"],"group":"brown","color":"#70402b","price":80000,"mortgage":40000,"house_cost":50000,"rent_table":[14000,70000,200000,550000,750000,1050000],"rent_growth":1.1},
+
+  {"id":"light_1","name":"Набережная","type":"property","tags":["property"],"group":"light","color":"#65a9b8","price":100000,"mortgage":50000,"house_cost":50000,"rent_table":[16000,80000,240000,700000,900000,1100000],"rent_growth":1.1},
+  {"id":"light_2","name":"Садовая","type":"property","tags":["property"],"group":"light","color":"#65a9b8","price":100000,"mortgage":50000,"house_cost":50000,"rent_table":[18000,90000,270000,730000,930000,1150000],"rent_growth":1.1},
+  {"id":"light_3","name":"Речной квартал","type":"property","tags":["property"],"group":"light","color":"#65a9b8","price":120000,"mortgage":60000,"house_cost":50000,"rent_table":[20000,100000,300000,750000,950000,1200000],"rent_growth":1.1},
+  {"id":"light_4","name":"Голубой проспект","type":"property","tags":["property"],"group":"light","color":"#65a9b8","price":120000,"mortgage":60000,"house_cost":50000,"rent_table":[22000,110000,330000,780000,980000,1250000],"rent_growth":1.1},
+
+  {"id":"pink_1","name":"Театральная","type":"property","tags":["property"],"group":"pink","color":"#a84f78","price":140000,"mortgage":70000,"house_cost":100000,"rent_table":[24000,120000,360000,850000,1020000,1300000],"rent_growth":1.1},
+  {"id":"pink_2","name":"Галерейная","type":"property","tags":["property"],"group":"pink","color":"#a84f78","price":140000,"mortgage":70000,"house_cost":100000,"rent_table":[26000,130000,390000,880000,1050000,1350000],"rent_growth":1.1},
+  {"id":"pink_3","name":"Оперный бульвар","type":"property","tags":["property"],"group":"pink","color":"#a84f78","price":160000,"mortgage":80000,"house_cost":100000,"rent_table":[28000,140000,420000,900000,1080000,1400000],"rent_growth":1.1},
+  {"id":"pink_4","name":"Площадь муз","type":"property","tags":["property"],"group":"pink","color":"#a84f78","price":160000,"mortgage":80000,"house_cost":100000,"rent_table":[30000,150000,450000,930000,1120000,1450000],"rent_growth":1.1},
+
+  {"id":"orange_1","name":"Рыночная","type":"property","tags":["property"],"group":"orange","color":"#c17836","price":180000,"mortgage":90000,"house_cost":100000,"rent_table":[32000,160000,480000,1000000,1160000,1500000],"rent_growth":1.1},
+  {"id":"orange_2","name":"Купеческий ряд","type":"property","tags":["property"],"group":"orange","color":"#c17836","price":180000,"mortgage":90000,"house_cost":100000,"rent_table":[34000,170000,510000,1030000,1200000,1550000],"rent_growth":1.1},
+  {"id":"orange_3","name":"Янтарная","type":"property","tags":["property"],"group":"orange","color":"#c17836","price":200000,"mortgage":100000,"house_cost":100000,"rent_table":[36000,180000,540000,1060000,1240000,1600000],"rent_growth":1.1},
+  {"id":"orange_4","name":"Солнечный проспект","type":"property","tags":["property"],"group":"orange","color":"#c17836","price":200000,"mortgage":100000,"house_cost":100000,"rent_table":[38000,190000,570000,1090000,1280000,1650000],"rent_growth":1.1},
+
+  {"id":"red_1","name":"Банковская","type":"property","tags":["property"],"group":"red","color":"#a43a35","price":220000,"mortgage":110000,"house_cost":150000,"rent_table":[40000,200000,600000,1150000,1320000,1700000],"rent_growth":1.1},
+  {"id":"red_2","name":"Биржевая","type":"property","tags":["property"],"group":"red","color":"#a43a35","price":220000,"mortgage":110000,"house_cost":150000,"rent_table":[42000,210000,630000,1180000,1360000,1750000],"rent_growth":1.1},
+  {"id":"red_3","name":"Деловой центр","type":"property","tags":["property"],"group":"red","color":"#a43a35","price":240000,"mortgage":120000,"house_cost":150000,"rent_table":[44000,220000,660000,1210000,1400000,1800000],"rent_growth":1.1},
+  {"id":"red_4","name":"Капитальная","type":"property","tags":["property"],"group":"red","color":"#a43a35","price":240000,"mortgage":120000,"house_cost":150000,"rent_table":[46000,230000,690000,1240000,1440000,1850000],"rent_growth":1.1},
+
+  {"id":"yellow_1","name":"Золотая миля","type":"property","tags":["property"],"group":"yellow","color":"#c2a63b","price":260000,"mortgage":130000,"house_cost":150000,"rent_table":[48000,240000,720000,1300000,1480000,1900000],"rent_growth":1.1},
+  {"id":"yellow_2","name":"Монетная","type":"property","tags":["property"],"group":"yellow","color":"#c2a63b","price":260000,"mortgage":130000,"house_cost":150000,"rent_table":[50000,250000,750000,1330000,1520000,1950000],"rent_growth":1.1},
+  {"id":"yellow_3","name":"Имперская","type":"property","tags":["property"],"group":"yellow","color":"#c2a63b","price":280000,"mortgage":140000,"house_cost":150000,"rent_table":[52000,260000,780000,1360000,1560000,2000000],"rent_growth":1.1},
+  {"id":"yellow_4","name":"Проспект короны","type":"property","tags":["property"],"group":"yellow","color":"#c2a63b","price":280000,"mortgage":140000,"house_cost":150000,"rent_table":[54000,270000,810000,1390000,1600000,2050000],"rent_growth":1.1},
+
+  {"id":"green_1","name":"Парковая","type":"property","tags":["property"],"group":"green","color":"#347253","price":300000,"mortgage":150000,"house_cost":200000,"rent_table":[56000,280000,840000,1450000,1640000,2100000],"rent_growth":1.1},
+  {"id":"green_2","name":"Изумрудная","type":"property","tags":["property"],"group":"green","color":"#347253","price":300000,"mortgage":150000,"house_cost":200000,"rent_table":[58000,290000,870000,1480000,1680000,2150000],"rent_growth":1.1},
+  {"id":"green_3","name":"Дворцовые сады","type":"property","tags":["property"],"group":"green","color":"#347253","price":320000,"mortgage":160000,"house_cost":200000,"rent_table":[60000,300000,900000,1510000,1720000,2200000],"rent_growth":1.1},
+  {"id":"green_4","name":"Гранд-аллея","type":"property","tags":["property"],"group":"green","color":"#347253","price":320000,"mortgage":160000,"house_cost":200000,"rent_table":[62000,310000,930000,1540000,1760000,2250000],"rent_growth":1.1},
+
+  {"id":"blue_1","name":"Премиальная","type":"property","tags":["property"],"group":"blue","color":"#304f83","price":350000,"mortgage":175000,"house_cost":200000,"rent_table":[70000,350000,1000000,1650000,1850000,2350000],"rent_growth":1.1},
+  {"id":"blue_2","name":"Миллионная","type":"property","tags":["property"],"group":"blue","color":"#304f83","price":350000,"mortgage":175000,"house_cost":200000,"rent_table":[75000,375000,1050000,1700000,1900000,2400000],"rent_growth":1.1},
+  {"id":"blue_3","name":"Резиденция","type":"property","tags":["property"],"group":"blue","color":"#304f83","price":400000,"mortgage":200000,"house_cost":200000,"rent_table":[85000,425000,1150000,1800000,2000000,2500000],"rent_growth":1.1},
+  {"id":"blue_4","name":"Алмазный проспект","type":"property","tags":["property"],"group":"blue","color":"#304f83","price":400000,"mortgage":200000,"house_cost":200000,"rent_table":[90000,450000,1200000,1850000,2100000,2600000],"rent_growth":1.1}
+]

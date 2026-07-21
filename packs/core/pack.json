@@ -1,0 +1,22 @@
+{
+  "id": "core",
+  "name": "Monopolis Core",
+  "version": "0.3.0",
+  "api_version": 2,
+  "authors": ["Monopolis"],
+  "description": "Base game content: board cells, tokens, the normal role and the classic ruleset.",
+  "dependencies": [],
+  "load_after": [],
+  "replaces": [],
+  "scene_overrides": {},
+  "resources": [],
+  "entry": "scripts/main.gd",
+  "content": {
+	"cells": "content/cells",
+	"tokens": "content/tokens",
+	"roles": "content/roles",
+	"rulesets": "content/rulesets",
+	"cards": "content/cards",
+	"sounds": "content/sounds"
+  }
+}
