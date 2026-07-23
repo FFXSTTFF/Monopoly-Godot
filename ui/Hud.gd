@@ -67,7 +67,7 @@ func _build_ui() -> void:
 	_toast.visible = false
 	_toast.add_theme_font_size_override("font_size", 20)
 	_toast.add_theme_stylebox_override("normal", UiPalette.panel(
-		Color(0.015, 0.05, 0.035, 0.95), UiPalette.GOLD_DARK, 8, 1, 12))
+		Color(UiPalette.GLASS, 0.95), UiPalette.GOLD_DARK, 8, 1, 12))
 	middle.add_child(_toast)
 
 	var bottom := HBoxContainer.new()
@@ -86,7 +86,7 @@ func _build_ui() -> void:
 	_context_panel = PanelContainer.new()
 	_context_panel.custom_minimum_size = Vector2(520, 0)
 	_context_panel.add_theme_stylebox_override("panel", UiPalette.panel(
-		Color(0.018, 0.07, 0.048, 0.96), UiPalette.GOLD, 10, 1, 12))
+		Color(UiPalette.GLASS, 0.96), UiPalette.GOLD, 10, 1, 12))
 	bottom.add_child(_context_panel)
 	var context := VBoxContainer.new()
 	context.add_theme_constant_override("separation", 5)
@@ -127,7 +127,7 @@ func _build_balance(parent: HBoxContainer) -> void:
 func _build_turn(parent: HBoxContainer) -> void:
 	var panel := _card(Vector2(310, 0))
 	panel.add_theme_stylebox_override("panel", UiPalette.panel(
-		Color(0.02, 0.09, 0.06, 0.94), UiPalette.GOLD, 11, 1, 12))
+		Color(UiPalette.GLASS, 0.94), UiPalette.GOLD, 11, 1, 12))
 	parent.add_child(panel)
 	var box := VBoxContainer.new()
 	box.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -314,7 +314,7 @@ func _card(minimum: Vector2) -> PanelContainer:
 	var panel := PanelContainer.new()
 	panel.custom_minimum_size = minimum
 	panel.add_theme_stylebox_override("panel", UiPalette.panel(
-		Color(0.012, 0.035, 0.026, 0.92), Color(UiPalette.GOLD_DARK, 0.75), 10, 1, 11))
+		Color(UiPalette.GLASS, 0.92), Color(UiPalette.GOLD_DARK, 0.75), 10, 1, 11))
 	return panel
 
 func _caption(text: String) -> Label:
