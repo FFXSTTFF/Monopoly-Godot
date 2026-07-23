@@ -78,7 +78,7 @@ func _add_property_row(state: Dictionary) -> void:
 	var cell := NetworkManager.local_board.get_cell(index)
 	var row := PanelContainer.new()
 	row.add_theme_stylebox_override("panel", UiPalette.panel(
-		Color(0.02, 0.06, 0.043, 0.7), Color(UiPalette.GOLD_DARK, 0.4), 7, 1, 8))
+		Color(UiPalette.GLASS, 0.7), Color(UiPalette.GOLD_DARK, 0.4), 7, 1, 8))
 	var content := VBoxContainer.new()
 	content.add_theme_constant_override("separation", 5)
 	row.add_child(content)

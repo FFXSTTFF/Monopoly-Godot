@@ -60,7 +60,7 @@ func _build_ui() -> void:
 
 	_panel = PanelContainer.new()
 	_panel.custom_minimum_size = Vector2(880, 590)
-	_panel.add_theme_stylebox_override("panel", UiPalette.panel(Color(0.018, 0.045, 0.033, 0.985), UiPalette.GOLD, 16, 1, 26))
+	_panel.add_theme_stylebox_override("panel", UiPalette.panel(Color(UiPalette.GLASS, 0.985), UiPalette.GOLD, 16, 1, 26))
 	_panel.mouse_filter = Control.MOUSE_FILTER_STOP
 	center.add_child(_panel)
 
@@ -76,7 +76,7 @@ func _build_ui() -> void:
 
 	var preview_card := PanelContainer.new()
 	preview_card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	preview_card.add_theme_stylebox_override("panel", UiPalette.panel(Color(0.01, 0.025, 0.019, 0.9), UiPalette.GOLD_DARK, 12, 1, 8))
+	preview_card.add_theme_stylebox_override("panel", UiPalette.panel(Color(UiPalette.GLASS, 0.9), UiPalette.GOLD_DARK, 12, 1, 8))
 	preview_card.add_child(_build_preview())
 	root.add_child(preview_card)
 	_select_current_token()
@@ -185,9 +185,9 @@ func _build_preview() -> SubViewportContainer:
 
 	var environment := Environment.new()
 	environment.background_mode = Environment.BG_COLOR
-	environment.background_color = Color(0.008, 0.02, 0.014)
+	environment.background_color = Color(0.90, 0.92, 0.95)
 	environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	environment.ambient_light_color = Color(0.22, 0.28, 0.24)
+	environment.ambient_light_color = Color(0.97, 0.97, 0.96)
 	environment.ambient_light_energy = 0.65
 	environment.tonemap_mode = Environment.TONE_MAPPER_FILMIC
 	environment.glow_enabled = true
