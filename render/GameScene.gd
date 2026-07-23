@@ -7,6 +7,9 @@ const FELT_SHADER := preload("res://render/shaders/felt.gdshader")
 const WOOD_SHADER := preload("res://render/shaders/wood.gdshader")
 const GOLD_SHADER := preload("res://render/shaders/gold.gdshader")
 const VIGNETTE_SHADER := preload("res://render/shaders/vignette.gdshader")
+## Light-theme overrides for felt.gdshader/wood.gdshader's dark shader defaults.
+const LIGHT_FELT_PARAMS := {"base_color": Color(0.95, 0.96, 0.98), "fiber_color": Color(0.90, 0.92, 0.95)}
+const LIGHT_WOOD_PARAMS := {"dark_wood": Color(0.45, 0.30, 0.20), "light_wood": Color(0.68, 0.50, 0.34)}
 
 var _camera: Camera3D
 var _table_size := 15.0 * BOARD_RENDERER.TILE_SIZE + BOARD_RENDERER.CARD_MARGIN
@@ -76,7 +79,7 @@ func _setup_table() -> void:
 	base_mesh.size = Vector3(_table_size + 2.2, 0.72, _table_size + 2.2)
 	base.mesh = base_mesh
 	base.position.y = -0.52
-	base.material_override = _shader_material(WOOD_SHADER)
+	base.material_override = _shader_material(WOOD_SHADER, LIGHT_WOOD_PARAMS)
 	table.add_child(base)
 
 	var felt := MeshInstance3D.new()
@@ -84,7 +87,7 @@ func _setup_table() -> void:
 	felt_mesh.size = Vector2(_table_size, _table_size)
 	felt.mesh = felt_mesh
 	felt.position.y = -0.145
-	felt.material_override = _shader_material(FELT_SHADER)
+	felt.material_override = _shader_material(FELT_SHADER, LIGHT_FELT_PARAMS)
 	table.add_child(felt)
 
 	var rail_half := (_table_size + 1.1) * 0.5
@@ -108,7 +111,7 @@ func _add_rail(parent: Node3D, position: Vector3, size: Vector3) -> void:
 	mesh.size = size
 	rail.mesh = mesh
 	rail.position = position
-	rail.material_override = _shader_material(WOOD_SHADER)
+	rail.material_override = _shader_material(WOOD_SHADER, LIGHT_WOOD_PARAMS)
 	parent.add_child(rail)
 
 func _add_trim(parent: Node3D, position: Vector3, size: Vector3, material: Material) -> void:
@@ -222,7 +225,9 @@ func _setup_hud() -> void:
 	hud.name = "Hud"
 	layer.add_child(hud)
 
-func _shader_material(shader: Shader) -> ShaderMaterial:
+func _shader_material(shader: Shader, params: Dictionary = {}) -> ShaderMaterial:
 	var material := ShaderMaterial.new()
 	material.shader = shader
+	for key in params:
+		material.set_shader_parameter(key, params[key])
 	return material

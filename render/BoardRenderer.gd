@@ -94,6 +94,8 @@ func _build_foundation() -> void:
 	slab.position.y = -0.03
 	var slab_material := ShaderMaterial.new()
 	slab_material.shader = FELT_SHADER
+	slab_material.set_shader_parameter("base_color", Color(0.95, 0.96, 0.98))
+	slab_material.set_shader_parameter("fiber_color", Color(0.90, 0.92, 0.95))
 	slab.material_override = slab_material
 	_decor_root.add_child(slab)
 
