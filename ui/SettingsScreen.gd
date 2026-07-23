@@ -20,7 +20,7 @@ func _build_ui() -> void:
 	var panel := PanelContainer.new()
 	panel.custom_minimum_size = Vector2(590, 640)
 	panel.add_theme_stylebox_override("panel", UiPalette.panel(
-		Color(0.015, 0.043, 0.031, 0.84),
+		Color(UiPalette.GLASS, 0.84),
 		Color(UiPalette.GOLD_DARK, 0.65), 14, 1, 26))
 	center.add_child(panel)
 

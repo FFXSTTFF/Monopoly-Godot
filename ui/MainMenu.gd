@@ -64,7 +64,7 @@ func _build_ui() -> void:
 	card.custom_minimum_size = Vector2(430, 0)
 	card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	card.add_theme_stylebox_override("panel", UiPalette.panel(
-		Color(0.018, 0.048, 0.035, 0.74),
+		Color(UiPalette.GLASS, 0.74),
 		Color(UiPalette.GOLD_DARK, 0.58), 14, 1, 22))
 	right_column.add_child(card)
 

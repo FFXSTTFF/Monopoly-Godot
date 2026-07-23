@@ -30,7 +30,7 @@ func _build_ui() -> void:
 	var panel := PanelContainer.new()
 	panel.custom_minimum_size = Vector2(980, 610)
 	panel.add_theme_stylebox_override("panel", UiPalette.panel(
-		Color(0.014, 0.042, 0.030, 0.82),
+		Color(UiPalette.GLASS, 0.82),
 		Color(UiPalette.GOLD_DARK, 0.62), 15, 1, 26))
 	center.add_child(panel)
 	var layout := HBoxContainer.new()
@@ -132,7 +132,7 @@ func _refresh() -> void:
 	for player in NetworkManager.local_players:
 		var row := PanelContainer.new()
 		row.add_theme_stylebox_override("panel", UiPalette.panel(
-			Color(0.02, 0.065, 0.045, 0.58),
+			Color(UiPalette.GLASS, 0.58),
 			Color(UiPalette.GOLD_DARK, 0.35), 8, 1, 9))
 		var horizontal := HBoxContainer.new()
 		row.add_child(horizontal)
