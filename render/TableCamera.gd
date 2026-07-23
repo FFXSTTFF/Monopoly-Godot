@@ -44,8 +44,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		_dragging = event.pressed
 		_drag_last_x = event.position.x
 	elif event is InputEventMouseMotion and _dragging:
-		var delta_x := event.position.x - _drag_last_x
-		_drag_last_x = event.position.x
+		var motion := event as InputEventMouseMotion
+		var delta_x: float = motion.position.x - _drag_last_x
+		_drag_last_x = motion.position.x
 		_angle -= delta_x * DRAG_SENSITIVITY
 		_update_position()
 
