@@ -1,4 +1,4 @@
-﻿extends Node3D
+extends Node3D
 ## Cinematic 2.5D table and responsive framing for the vanilla game.
 
 const BOARD_RENDERER := preload("res://render/BoardRenderer.gd")
