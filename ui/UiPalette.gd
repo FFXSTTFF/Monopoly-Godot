@@ -2,20 +2,20 @@ class_name UiPalette
 extends RefCounted
 ## Shared luxury palette and style factories for every vanilla screen.
 
-const INK := Color("#090d0b")
-const FELT_DARK := Color("#071d14")
-const FELT := Color("#0d3a27")
-const FELT_LIGHT := Color("#18563b")
-const MAHOGANY := Color("#2b120d")
-const MAHOGANY_LIGHT := Color("#4a2116")
-const GOLD_DARK := Color("#7d5d20")
-const GOLD := Color("#d1a94a")
-const GOLD_LIGHT := Color("#f1d98b")
-const IVORY := Color("#f5efd9")
-const MUTED := Color("#b5aa8d")
+const INK := Color("#eef1f5")
+const FELT_DARK := Color("#dfe4ea")
+const FELT := Color("#f3f5f8")
+const FELT_LIGHT := Color("#ffffff")
+const MAHOGANY := Color("#c9762f")
+const MAHOGANY_LIGHT := Color("#e0a05a")
+const GOLD_DARK := Color("#b8933a")
+const GOLD := Color("#c9a54a")
+const GOLD_LIGHT := Color("#e6cf8f")
+const IVORY := Color("#1e2430")
+const MUTED := Color("#6c7688")
 const DANGER := Color("#c9574f")
 const SUCCESS := Color("#55bd7b")
-const GLASS := Color(0.025, 0.055, 0.042, 0.92)
+const GLASS := Color(1.0, 1.0, 1.0, 0.92)
 
 static func panel(
 		background: Color = GLASS,
@@ -49,7 +49,7 @@ static func button(background: Color, border: Color, raised: bool = false) -> St
 	return style
 
 static func line_edit(focused: bool = false) -> StyleBoxFlat:
-	var border := GOLD if focused else Color(0.48, 0.39, 0.20, 0.65)
-	var style := panel(Color(0.018, 0.05, 0.038, 0.96), border, 7, 1, 10)
+	var border := GOLD if focused else Color(0.75, 0.70, 0.55, 0.55)
+	var style := panel(Color(1.0, 1.0, 1.0, 0.96), border, 7, 1, 10)
 	style.shadow_size = 2
 	return style

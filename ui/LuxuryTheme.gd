@@ -7,7 +7,7 @@ static func create() -> Theme:
 	theme.default_font_size = 16
 
 	theme.set_color("font_color", "Label", UiPalette.IVORY)
-	theme.set_color("font_shadow_color", "Label", Color(0, 0, 0, 0.7))
+	theme.set_color("font_shadow_color", "Label", Color(1, 1, 1, 0.55))
 	theme.set_constant("shadow_offset_x", "Label", 1)
 	theme.set_constant("shadow_offset_y", "Label", 2)
 
@@ -20,7 +20,7 @@ static func create() -> Theme:
 	theme.set_stylebox("normal", "Button", UiPalette.button(UiPalette.FELT_DARK, UiPalette.GOLD_DARK))
 	theme.set_stylebox("hover", "Button", UiPalette.button(UiPalette.FELT, UiPalette.GOLD, true))
 	theme.set_stylebox("pressed", "Button", UiPalette.button(UiPalette.MAHOGANY_LIGHT, UiPalette.GOLD_LIGHT))
-	theme.set_stylebox("disabled", "Button", UiPalette.button(Color(0.04, 0.055, 0.05, 0.78), Color(0.2, 0.2, 0.18, 0.5)))
+	theme.set_stylebox("disabled", "Button", UiPalette.button(Color(0.88, 0.89, 0.91, 0.78), Color(0.75, 0.76, 0.78, 0.5)))
 	theme.set_stylebox("focus", "Button", UiPalette.button(Color.TRANSPARENT, UiPalette.GOLD_LIGHT))
 
 	theme.set_color("font_color", "LineEdit", UiPalette.IVORY)
