@@ -121,7 +121,7 @@ func _build_tile(index: int) -> void:
 
 	var material := StandardMaterial3D.new()
 	var accent := ColorUtil.to_color(cell.get("color", "#c7b998"))
-	material.albedo_color = accent.lerp(Color("#e8dfc7"), 0.72 if not is_corner else 0.35)
+	material.albedo_color = accent.lerp(Color("#eef1f5"), 0.72 if not is_corner else 0.35)
 	material.roughness = 0.62
 	material.metallic = 0.06
 	tile.material_override = material
@@ -211,7 +211,7 @@ func _add_card_row(
 	border.mesh = border_mesh
 	border.position = center + Vector3(0, lift + 0.01, 0)
 	var border_material := StandardMaterial3D.new()
-	border_material.albedo_color = Color("#2a2a2a")
+	border_material.albedo_color = Color("#c7cdd6")
 	border.material_override = border_material
 	_tiles_root.add_child(border)
 
@@ -221,7 +221,7 @@ func _add_card_row(
 	fill.mesh = fill_mesh
 	fill.position = center + Vector3(0, lift + 0.018, 0)
 	var fill_material := StandardMaterial3D.new()
-	fill_material.albedo_color = Color("#d9d9d9")
+	fill_material.albedo_color = Color("#ffffff")
 	fill.material_override = fill_material
 	_tiles_root.add_child(fill)
 
@@ -229,7 +229,7 @@ func _add_card_row(
 	label.text = text
 	label.font_size = 44
 	label.pixel_size = 0.0042 * TILE_SIZE
-	label.modulate = Color("#1a1a1a")
+	label.modulate = Color("#1e2430")
 	label.no_depth_test = true
 	label.render_priority = 2
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -281,9 +281,9 @@ func _add_tile_label(cell: Dictionary, coord: Vector2i, height: float, is_corner
 	label.text = name
 	label.font_size = 58 if is_corner else (44 if not ladder.is_empty() else 52)
 	label.pixel_size = (0.0048 if is_corner else 0.0045) * TILE_SIZE
-	label.modulate = Color("#100b08")
+	label.modulate = Color("#1e2430")
 	label.outline_size = 10
-	label.outline_modulate = Color(1.0, 0.97, 0.86, 0.96)
+	label.outline_modulate = Color(1.0, 1.0, 1.0, 0.96)
 	label.render_priority = 2
 	label.no_depth_test = true
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -308,7 +308,7 @@ func _build_center_mark() -> void:
 	seal.mesh = seal_mesh
 	seal.position.y = 0.12
 	var seal_material := StandardMaterial3D.new()
-	seal_material.albedo_color = Color("#092f20")
+	seal_material.albedo_color = Color("#2a3550")
 	seal_material.roughness = 0.76
 	seal_material.metallic = 0.12
 	seal.material_override = seal_material
