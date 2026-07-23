@@ -1,4 +1,4 @@
-extends Node3D
+﻿extends Node3D
 ## Cinematic 2.5D table and responsive framing for the vanilla game.
 
 const BOARD_RENDERER := preload("res://render/BoardRenderer.gd")
@@ -36,9 +36,9 @@ func _on_game_state_changed(_snapshot: Dictionary) -> void:
 func _setup_environment() -> void:
 	var environment := Environment.new()
 	environment.background_mode = Environment.BG_COLOR
-	environment.background_color = Color("#050806")
+	environment.background_color = Color("#e9edf2")
 	environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	environment.ambient_light_color = Color("#385346")
+	environment.ambient_light_color = Color("#fbfbfa")
 	environment.ambient_light_energy = 0.44
 	environment.reflected_light_source = Environment.REFLECTION_SOURCE_DISABLED
 	environment.tonemap_mode = Environment.TONE_MAPPER_FILMIC
@@ -51,7 +51,7 @@ func _setup_environment() -> void:
 	environment.ssao_radius = 1.25
 	environment.ssao_intensity = 0.72
 	environment.fog_enabled = GameConfig.effects_quality > 1
-	environment.fog_light_color = Color("#17271f")
+	environment.fog_light_color = Color("#e9edf2")
 	environment.fog_density = 0.006
 	environment.fog_height = 1.0
 	environment.fog_height_density = 0.18
