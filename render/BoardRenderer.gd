@@ -2,10 +2,11 @@ class_name BoardRenderer
 extends Node3D
 ## Premium 2.5D board, token movement and physical dice feedback.
 
-## World-unit footprint of one board cell. Bumped up from the original 1.0 so
-## tiles are big enough to read their card (icon/name/price/rent ladder)
-## instead of looking like a small block of overlapping text.
-const TILE_SIZE := 1.6
+## World-unit footprint of one board cell. Bumped up from the original 1.0,
+## then again to 2.2 for the light-theme redesign so tiles are big enough to
+## read their card (icon/name/price/rent ladder) instead of looking like a
+## small block of overlapping text - especially for longer company names.
+const TILE_SIZE := 2.2
 ## Extra space reserved beyond the outer ring of tiles for the property card's
 ## photo (the only part of the card that extends outward past the tile - the
 ## rent-ladder rows stack inward, into the board's empty interior instead).
