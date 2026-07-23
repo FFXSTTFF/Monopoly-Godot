@@ -3,6 +3,7 @@ extends Node3D
 
 const BOARD_RENDERER := preload("res://render/BoardRenderer.gd")
 const HUD_SCRIPT := preload("res://ui/Hud.gd")
+const TABLE_CAMERA := preload("res://render/TableCamera.gd")
 const FELT_SHADER := preload("res://render/shaders/felt.gdshader")
 const WOOD_SHADER := preload("res://render/shaders/wood.gdshader")
 const GOLD_SHADER := preload("res://render/shaders/gold.gdshader")
@@ -11,7 +12,7 @@ const VIGNETTE_SHADER := preload("res://render/shaders/vignette.gdshader")
 const LIGHT_FELT_PARAMS := {"base_color": Color(0.95, 0.96, 0.98), "fiber_color": Color(0.90, 0.92, 0.95)}
 const LIGHT_WOOD_PARAMS := {"dark_wood": Color(0.45, 0.30, 0.20), "light_wood": Color(0.68, 0.50, 0.34)}
 
-var _camera: Camera3D
+var _camera: TableCamera
 var _table_size := 15.0 * BOARD_RENDERER.TILE_SIZE + BOARD_RENDERER.CARD_MARGIN
 
 func _ready() -> void:
@@ -26,15 +27,15 @@ func _ready() -> void:
 	_setup_vignette()
 	_setup_hud()
 	EventBus.game_state_changed.connect(_on_game_state_changed)
-	get_viewport().size_changed.connect(_fit_camera)
-	call_deferred("_fit_camera")
+	call_deferred("_init_camera_seat")
 
 func _on_game_state_changed(_snapshot: Dictionary) -> void:
 	if NetworkManager.local_board != null:
 		_table_size = maxf(
 			15.0 * BOARD_RENDERER.TILE_SIZE + BOARD_RENDERER.CARD_MARGIN,
 			float(NetworkManager.local_board.size) * BOARD_RENDERER.TILE_SIZE + BOARD_RENDERER.CARD_MARGIN)
-	_fit_camera()
+	if _camera != null:
+		_camera.set_table_size(_table_size)
 
 func _setup_environment() -> void:
 	var environment := Environment.new()
@@ -149,31 +150,24 @@ func _setup_lights() -> void:
 	add_child(warm_pool)
 
 func _setup_camera() -> void:
-	_camera = Camera3D.new()
-	_camera.projection = Camera3D.PROJECTION_ORTHOGONAL
-	_camera.position = Vector3(0, 18.5, 10.0)
-	_camera.rotation_degrees = Vector3(-62.0, 0, 0)
-	_camera.current = true
+	_camera = TABLE_CAMERA.new()
 	add_child(_camera)
+	_camera.set_table_size(_table_size)
 
-func _fit_camera() -> void:
+## Sets the local player's starting camera angle from their table seat.
+## Deferred so NetworkManager.local_players (populated from earlier lobby
+## snapshots) is settled before we read it.
+func _init_camera_seat() -> void:
 	if _camera == null:
 		return
-	var viewport_size := get_viewport().get_visible_rect().size
-	if viewport_size.y <= 0:
-		return
-	var aspect := viewport_size.x / viewport_size.y
-	var board_extent := float(NetworkManager.local_board.size if NetworkManager.local_board != null else 15) \
-			* BOARD_RENDERER.TILE_SIZE + BOARD_RENDERER.CARD_MARGIN
-	# The camera looks down at a steep -62 degree pitch, so the board's depth
-	# is heavily foreshortened on screen - fitting to the raw board_extent (as
-	# if viewed from straight above) left the whole board looking tiny with a
-	# huge unused margin. These tighter factors zoom in close to the actual
-	# foreshortened silhouette while still leaving the HUD's screen corners clear.
-	var vertical_fit := board_extent * 0.72
-	var horizontal_fit := (board_extent * 0.95) / maxf(aspect, 0.75)
-	_camera.size = maxf(vertical_fit, horizontal_fit)
-	_camera.position = Vector3(0, board_extent * 1.25, board_extent * 0.66)
+	_camera.reset_to_seat(_local_seat_order(), maxi(NetworkManager.local_players.size(), 1))
+
+func _local_seat_order() -> int:
+	var peer := NetworkManager.get_local_peer_id()
+	for player in NetworkManager.local_players:
+		if player.peer_id == peer:
+			return player.order
+	return 0
 
 func _setup_particles() -> void:
 	if GameConfig.effects_quality < 2 or DisplayServer.get_name() == "headless":
